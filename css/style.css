@@ -300,8 +300,9 @@ nav .header_anchor:hover:after {
 }
 
 .title_reg a:hover {
+  transform: translateY(-3px);
   box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4);
-  transition: all 0.2s ease 0s;
+  transition: all 0.15s ease 0s;
 }
 
 .photo_mobile1 {
@@ -496,10 +497,10 @@ nav .header_anchor:hover:after {
   color: #B0B0B0;
 }
 
-.button-help p {
+.galery_button p {
   cursor: pointer;
   display: block;
-  margin-top: 10px;
+  margin-top: 20px;
   position: relative;
   max-width: 240px;
   font-weight: 500;
@@ -513,16 +514,13 @@ nav .header_anchor:hover:after {
   transition: all 0.5s ease 0s;
 }
 
-.button-help:hover p {
-  color: #fff;
-  border: none;
-  background: #000;
-  border: 1px solid #000000;
-  transition: all 0.2s ease 0s;
+.span {
+  max-width: 245px;
 }
 
 .galery_button {
   cursor: pointer;
+  max-width: 240px;
   position: relative;
 }
 
@@ -535,11 +533,12 @@ nav .header_anchor:hover:after {
   max-width: 240px;
   z-index: 130;
   position: absolute;
-  height: 100%;
+  height: 50px;
   width: 90%;
   background: #000;
   opacity: 0.2;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
   border-radius: 7px;
   top: -10px;
   transition: all 0.5s ease 0s;
@@ -549,40 +548,29 @@ nav .header_anchor:hover:after {
   max-width: 230px;
   z-index: 120;
   position: absolute;
-  height: 100%;
+  height: 50px;
   width: 80%;
   background: #000;
   opacity: 0.1;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
   border-radius: 7px;
   top: -20px;
   transition: all 0.5s ease 0s;
 }
 
-.galery_button .span:hover .span1 {
-  max-width: 240px;
-  position: absolute;
-  height: 100%;
-  width: 90%;
-  background: #000;
-  opacity: 0.2;
-  left: 0;
-  border-radius: 7px;
+.galery_button:hover .span1,
+.galery_button:hover .span2 {
   top: 0px;
   transition: all 0.5s ease 0s;
 }
 
-.galery_button .span:hover .span2 {
-  max-width: 240px;
-  position: absolute;
-  height: 100%;
-  width: 80%;
+.galery_button:hover p {
+  color: #fff;
+  border: none;
   background: #000;
-  opacity: 0.1;
-  left: 0;
-  border-radius: 7px;
-  top: 0px;
-  transition: all 0.5s ease 0s;
+  border: 1px solid #000000;
+  transition: all 0.2s ease 0s;
 }
 
 /* СЛАЙДЕР1 */
@@ -618,7 +606,7 @@ nav .header_anchor:hover:after {
 
 .galery.actives #close {
   position: absolute;
-  right: 60px;
+  right: 5%;
   top: 60px;
   width: 32px;
   height: 32px;
@@ -644,27 +632,6 @@ nav .header_anchor:hover:after {
 
 .galery.actives #close:after {
   transform: rotate(-45deg);
-}
-
-.slick-dots {
-  position: absolute;
-  bottom: 20%;
-  display: flex;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.slick-dots li {
-  list-style: none;
-  margin: 0 10px;
-}
-
-.slick-dots button {
-  font-size: 0;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  border-radius: 50%;
 }
 
 /* СТРАНИЦА 3 */
@@ -720,6 +687,7 @@ nav .header_anchor:hover:after {
 
 .page3__content {
   max-height: 100%;
+  padding-bottom: 20px;
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
@@ -751,39 +719,67 @@ nav .header_anchor:hover:after {
 
 .page3__content-2 {
   flex: 1 0 33%;
-  padding-right: 30px;
+  padding-right: 50px;
+}
+
+.span3 {
+  position: absolute;
+  left: -30px;
+  width: 100px;
+  height: 90%;
+  bottom: 50%;
+  background: #FFFFFF;
+  opacity: 0.15;
+  border-radius: 24px;
+  transform: translateY(50%);
+  overflow: hidden;
+}
+
+.span4 {
+  position: absolute;
+  left: -15px;
+  width: 100px;
+  height: 95%;
+  bottom: 50%;
+  background: #FFFFFF;
+  opacity: 0.3;
+  border-radius: 24px;
+  transform: translateY(50%);
+  overflow: hidden;
 }
 
 .page3__content-reviews {
+  z-index: 100;
   position: relative;
   min-width: 0;
-  padding: 0 60px 0px 65px;
+  padding: 0 30px 0px 30px;
   flex: 0 0 33%;
   width: 100%;
   height: 65vh;
-  background-image: url("../img/form.svg");
-  background-repeat: no-repeat;
-  overflow: hidden;
-  background-size: 95% 100%;
+  width: 90%;
+  height: 100%;
+  background: #fff;
+  border-radius: 24px;
   color: #000;
   position: relative;
 }
 
 .page3__content-reviews p {
   display: block;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .page3__content-reviews h3 {
+  text-align: center;
   font-weight: 500;
   font-size: 28px;
   line-height: 34px;
   color: #151515;
-  padding-top: 8%;
+  padding-top: 35px;
 }
 
 .page3__content-reviews h4 {
-  padding-top: 2%;
+  padding: 34px 0 10px 0;
   font-size: 20px;
   line-height: 24px;
   display: flex;
@@ -798,15 +794,13 @@ nav .header_anchor:hover:after {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
   color: #A5A5A5;
-  padding-top: 20px;
+  padding: 20px 0 30px 0;
 }
 
 /* СЛАЙДЕР2 */
 
 .slider {
   min-width: 0;
-  max-height: 100%;
-  padding-bottom: 130px;
   display: flex;
   flex-direction: column;
 }
@@ -826,11 +820,11 @@ nav .header_anchor:hover:after {
 
 .slider .slick-arrow {
   position: absolute;
-  bottom: 7%;
+  top: 30px;
   font-size: 0;
   width: 45px;
   height: 45px;
-  background: url("../img/button_right.png");
+  background: url("../img/button_right.svg");
   background-repeat: no-repeat;
   z-index: 150;
 }
@@ -852,7 +846,7 @@ nav .header_anchor:hover:after {
 }
 
 .slider .slick-arrow.slick-prev {
-  left: 20%;
+  left: 30px;
   transform: rotate(180deg);
 }
 
@@ -870,7 +864,7 @@ nav .header_anchor:hover:after {
 }
 
 .slider .slick-arrow.slick-next {
-  right: 20%;
+  right: 30px;
 }
 
 .galery_slider .slick-arrow.slick-next {
@@ -954,10 +948,6 @@ nav .header_anchor:hover:after {
   flex: 0 0 40%;
 }
 
-.content__contacts :nth-child(2) {
-  padding-top: 5.6vh;
-}
-
 .content__contacts h5 {
   padding-top: 4.5vh;
   font-weight: 300;
@@ -972,6 +962,23 @@ nav .header_anchor:hover:after {
   font-size: 28px;
   line-height: 34px;
   color: #151515;
+}
+
+.content__contacts a:after {
+  background-color: #000;
+  display: block;
+  width: 0;
+  height: 0.5px;
+  content: "";
+  transition: width .3s ease-in-out;
+}
+
+.content__contacts a:hover:after {
+  width: 100%;
+}
+
+.contacts_container {
+  display: inline-block;
 }
 
 .content__form {
@@ -1032,6 +1039,10 @@ nav .header_anchor:hover:after {
   width: 100%;
   padding: 20px 30px;
   margin: 15px 0;
+}
+
+.content__form input:focus {
+  border: 2px solid #000;
 }
 
 .content__form form {
@@ -1174,11 +1185,6 @@ footer {
   border: 0;
 }
 
-.inst:hover {
-  transform: scale(1.1);
-  transition: all 0.001s ease 0s;
-}
-
 @media (min-width: 580px) {
   .photo_mobile1 {
     max-height: 500px;
@@ -1200,39 +1206,32 @@ footer {
   }
 }
 
-@media (min-width: 769px) and (max-height: 755px) {
-  .page3__content-reviews p {
-    height: 35vh;
+@media (min-width: 769px) and (max-height: 670px) {
+  .page3 .container {
+    margin-top: 65px;
+    padding-top: 25px;
   }
 }
 
-@media (min-width: 769px) and (max-height: 680px) {
-  .page3__content-reviews p {
-    height: 34vh;
+@media (min-width: 769px) and (max-height: 760px) {
+  .page3__content {
+    padding-top: 15px;
   }
 }
 
-@media (min-width: 769px) and (max-height: 638px) {
-  .page3__content-reviews p {
-    height: 32vh;
+@media (min-width: 769px) and (max-height: 745px) {
+  .page3__content .container {
+    padding-top: 10px;
   }
 }
 
-@media (min-width: 769px) and (max-height: 620px) {
-  .page3__content-reviews p {
-    height: 30vh;
+@media (min-width: 769px) and (max-height: 740px) {
+  .page3__content {
+    padding-top: 0px;
   }
-}
 
-@media (min-width: 769px) and (max-height: 600px) {
-  .page3__content-reviews p {
-    height: 28vh;
-  }
-}
-
-@media (min-width: 769px) and (max-height: 580px) {
-  .page3__content-reviews p {
-    height: 26vh;
+  .page3__content p {
+    padding: 5px 0 5px 0;
   }
 }
 
@@ -1396,10 +1395,6 @@ footer {
   .title_reg {
     padding-right: 0;
     max-width: 230px;
-  }
-
-  .page3__content-reviews {
-    padding: 0 45px 0px 50px;
   }
 
   #fp-nav {
@@ -1724,11 +1719,12 @@ footer {
     right: 20px;
     top: 40px;
     transform: translateY(-50%);
-    padding: 20px 15px;
+    padding: 15px 10px;
     background: #151515;
     border-radius: 50%;
     z-index: 1050;
     transition: all 0.3s ease 0s;
+    opacity: 0.9;
   }
 
   .header_burger.active {
@@ -1769,7 +1765,6 @@ footer {
     width: 30px;
     height: 0px;
     left: 0;
-    border: 1px;
     border: 2px solid #fff;
     box-sizing: border-box;
     border-radius: 1000px;
@@ -1874,7 +1869,7 @@ footer {
 
   .page2_content {
     flex-direction: column;
-    padding: 70px 0 0 0;
+    padding: 60px 0 0 0;
   }
 
   .content__info {
@@ -1892,8 +1887,7 @@ footer {
     max-width: 100%;
   }
 
-  .galery_button,
-  .button-help {
+  .galery_button {
     max-width: 245px;
     margin: 0 auto;
   }
@@ -1906,10 +1900,6 @@ footer {
     padding-bottom: 0px;
   }
 
-  .page3__content-reviews p {
-    height: 210px;
-  }
-
   .page3,
   .container {
     height: auto;
@@ -1917,7 +1907,7 @@ footer {
 
   .page3 .container {
     margin-top: 0px;
-    padding: 40px 35px 80px 35px;
+    padding: 60px 35px 80px 35px;
   }
 
   .page3__content {
@@ -1925,12 +1915,40 @@ footer {
   }
 
   .page3__content-reviews {
-    height: 100%;
-    max-height: 450px;
+    height: auto;
+    width: 100%;
     margin-top: 40px;
-    background-image: none;
-    background: #fff;
     border-radius: 5%;
+  }
+
+  .page3__content-reviews p {
+    max-height: 280px;
+  }
+
+  .page3__content-reviews .span3 {
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    width: 90%;
+    height: 50px;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    opacity: 0.15;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .page3__content-reviews .span4 {
+    position: absolute;
+    bottom: -10px;
+    width: 95%;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    opacity: 0.3;
+    border-radius: 24px;
+    overflow: hidden;
   }
 
   .page4,
@@ -2017,7 +2035,7 @@ footer {
     right: 30px;
     border-radius: 50%;
     z-index: 197;
-    transition: all 0.5s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 
   .contacts-2.active {
@@ -2026,7 +2044,7 @@ footer {
     right: 30px;
     border-radius: 50%;
     z-index: 197;
-    transition: all 0.5s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 
   .contacts-3.active {
@@ -2035,7 +2053,7 @@ footer {
     right: 30px;
     border-radius: 50%;
     z-index: 197;
-    transition: all 0.5s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 
   .contacts-1,
@@ -2048,7 +2066,7 @@ footer {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    transition: all 0.5s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 }
 
@@ -2061,18 +2079,6 @@ footer {
 @media (max-width: 750px) {
   .shape_mobile {
     height: 80%;
-  }
-}
-
-@media (max-width: 630px) {
-  .page3__content-reviews p {
-    height: 215px;
-  }
-}
-
-@media (max-width: 595px) {
-  .page3__content-reviews p {
-    height: 225px;
   }
 }
 
@@ -2124,7 +2130,7 @@ footer {
   }
 
   .content__diploms {
-    padding: 20px 15px 50px 15px;
+    padding: 35px 15px 50px 15px;
   }
 
   .page3 h2 {
@@ -2132,17 +2138,9 @@ footer {
     line-height: 36px;
   }
 
-  .page3 .container {
-    margin-top: 0px;
-    padding: 40px 15px 80px 15px;
-  }
-
   .page3__content-reviews {
     padding: 0 20px;
-    background: none;
-    background-size: 100% 100%;
-    border-radius: 0;
-    background-image: url("../img/form_mob.svg");
+    height: 100%;
   }
 
   .content__form {
@@ -2150,7 +2148,7 @@ footer {
   }
 
   .content__contacts {
-    padding: 50px 15px 50px 15px;
+    padding: 60px 15px 50px 15px;
   }
 
   .content__contacts h2 {
@@ -2188,27 +2186,22 @@ footer {
   }
 }
 
-@media (max-width: 426px) {
-  .page3__content-reviews p {
-    height: 230px;
-  }
-}
-
 @media (max-width: 420px) {
   .shape_mobile {
     height: 90%;
   }
 }
 
-@media (max-width: 375px) {
-  .title_info p {
-    max-width: 220px;
+@media (max-width: 410px) {
+  .page3 .container {
+    margin-top: 0px;
+    padding: 40px 15px 80px 15px;
   }
 }
 
-@media (max-width: 330px) {
-  .page3__content-reviews p {
-    height: 240px;
+@media (max-width: 375px) {
+  .title_info p {
+    max-width: 220px;
   }
 }
 
@@ -2229,30 +2222,8 @@ footer {
   }
 }
 
-@media (max-height: 760px) {
-  .page3 .container {
-    padding-top: 5vh;
-  }
-
-  .page3__content {
-    padding-top: 15px;
-  }
-}
-
-@media (max-height: 700px) {
-  .page3__content {
-    padding-top: 0px;
-  }
-
-  .page3__content p {
-    padding: 5px 0 5px 0;
-  }
-}
-
 @media (min-height: 902px) {
   .grey_shape img {
     height: 100vh;
   }
 }
-
-.webp .slider .slick-arrow{ background: url(../img/button_right.webp); }
