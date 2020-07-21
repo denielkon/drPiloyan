@@ -719,7 +719,7 @@ nav .header_anchor:hover:after {
 
 .page3__content-2 {
   flex: 1 0 33%;
-  padding-right: 50px;
+  padding-right: 80px;
 }
 
 .span3 {
@@ -965,7 +965,7 @@ nav .header_anchor:hover:after {
 }
 
 .content__contacts a:after {
-  background-color: #000;
+  background-color: #151515;
   display: block;
   width: 0;
   height: 0.5px;
@@ -1068,6 +1068,63 @@ footer {
   bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.overlay {
+  display: none;
+  z-index: 3000;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+}
+
+.pop-up_form {
+  position: absolute;
+  display: block;
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #fff;
+}
+
+.pop-up_form p {
+  margin: 70px 0 0 20px;
+}
+
+.pop-up_close {
+  position: absolute;
+  top: 20px;
+  right: 12px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+}
+
+.pop-up_close:before {
+  content: '';
+  background: #000;
+  position: absolute;
+  height: 1px;
+  width: 31px;
+  top: 17px;
+  right: 2px;
+  transform: rotate(-45deg);
+}
+
+.pop-up_close:after {
+  content: '';
+  background: #000;
+  position: absolute;
+  height: 1px;
+  width: 31px;
+  top: 17px;
+  right: 2px;
+  transform: rotate(45deg);
 }
 
 .contacts-main,
@@ -1714,6 +1771,19 @@ footer {
     color: #000;
   }
 
+  .reg_menu {
+    display: block;
+    text-align: center;
+    margin: 100px auto 20px auto;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    max-width: 250px;
+    background: #000000;
+    border-radius: 16px;
+    padding: 18px 0px;
+  }
+
   .header_burger {
     position: fixed;
     right: 20px;
@@ -2195,7 +2265,7 @@ footer {
 @media (max-width: 410px) {
   .page3 .container {
     margin-top: 0px;
-    padding: 40px 15px 80px 15px;
+    padding: 60px 15px 80px 15px;
   }
 }
 
