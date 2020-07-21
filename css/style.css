@@ -89,6 +89,13 @@ h6 {
   font-weight: inherit;
 }
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
   font-family: Fira Sans;
 }
@@ -451,12 +458,14 @@ nav .header_anchor:hover:after {
 
 .info__member p {
   max-width: 250px;
+  -ms-grid-row-align: center;
   align-self: center;
   padding: 0 0 0 15px;
 }
 
 .content__diploms {
   flex: 1 0 22%;
+  -ms-grid-row-align: center;
   align-self: center;
   padding: 0 10px 0 41px;
   position: relative;
