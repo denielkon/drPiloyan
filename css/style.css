@@ -588,7 +588,6 @@ nav .header_anchor:hover:after {
 /* СЛАЙДЕР1 */
 
 .galery__slider-item {
-  overflow: auto;
   display: block;
   position: relative;
   width: 100vw;
@@ -605,6 +604,10 @@ nav .header_anchor:hover:after {
   margin: 0 auto;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.galery__slider-item .vertical {
+  padding-top: 0;
 }
 
 .galery__slider-item p {
