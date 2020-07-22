@@ -135,15 +135,15 @@ p {
 }
 
 .shape_mobile {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 80%;
   position: absolute;
-  top: -60px;
+  top: 0px;
   left: 0;
 }
 
 .shape_mobile img {
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 
@@ -2024,7 +2024,7 @@ footer {
   }
 
   .page3__content-reviews p {
-    max-height: 290px;
+    max-height: 270px;
   }
 
   .page3__content-reviews .span3 {
