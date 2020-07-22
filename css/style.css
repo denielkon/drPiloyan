@@ -89,13 +89,6 @@ h6 {
   font-weight: inherit;
 }
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 body {
   font-family: Fira Sans;
 }
@@ -136,9 +129,9 @@ p {
 
 .shape_mobile {
   width: 100%;
-  height: 80%;
+  height: 100%;
   position: absolute;
-  top: -30px;
+  top: -20px;
   left: 0;
 }
 
@@ -515,7 +508,7 @@ nav .header_anchor:hover:after {
 .galery_button p {
   cursor: pointer;
   display: block;
-  margin-top: 20px;
+  margin-top: 15px;
   position: relative;
   max-width: 240px;
   font-weight: 500;
@@ -527,6 +520,10 @@ nav .header_anchor:hover:after {
   border-radius: 100px;
   padding: 17px 0px;
   transition: all 0.5s ease 0s;
+}
+
+.galery_button img {
+  max-width: 245px;
 }
 
 .span {
@@ -576,7 +573,7 @@ nav .header_anchor:hover:after {
 
 .galery_button:hover .span1,
 .galery_button:hover .span2 {
-  top: 0px;
+  top: 10px;
   transition: all 0.5s ease 0s;
 }
 
@@ -591,6 +588,7 @@ nav .header_anchor:hover:after {
 /* СЛАЙДЕР1 */
 
 .galery__slider-item {
+  overflow: auto;
   display: block;
   position: relative;
   width: 100vw;
@@ -601,12 +599,21 @@ nav .header_anchor:hover:after {
 
 .galery__slider-item img {
   max-width: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  max-height: 90%;
+  padding-top: 30px;
+  display: block;
+  margin: 0 auto;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.galery__slider-item p {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0;
+  color: #fff;
+  max-width: 50%;
 }
 
 .galery__slider {
@@ -979,19 +986,6 @@ nav .header_anchor:hover:after {
   color: #151515;
 }
 
-.content__contacts a:after {
-  background-color: #151515;
-  display: block;
-  width: 0;
-  height: 0.5px;
-  content: "";
-  transition: width .3s ease-in-out;
-}
-
-.content__contacts a:hover:after {
-  width: 100%;
-}
-
 .contacts_container {
   display: inline-block;
 }
@@ -1080,7 +1074,7 @@ nav .header_anchor:hover:after {
 
 footer {
   position: absolute;
-  bottom: 5vh;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -1286,6 +1280,19 @@ footer {
 
   .page3__content-reviews p {
     height: 39vh;
+  }
+
+  .content__contacts a:after {
+    background-color: #151515;
+    display: block;
+    width: 0;
+    height: 0.5px;
+    content: "";
+    transition: width .3s ease-in-out;
+  }
+
+  .content__contacts a:hover:after {
+    width: 100%;
   }
 }
 
@@ -1688,6 +1695,10 @@ footer {
 }
 
 @media (max-width: 769px) {
+  .shape_mobile {
+    height: 80%;
+  }
+
   .page1 {
     height: auto;
     overflow: visible;
@@ -2133,6 +2144,7 @@ footer {
 
   .contacts-1.active {
     position: fixed;
+    opacity: 1;
     bottom: 95px;
     right: 30px;
     border-radius: 50%;
@@ -2142,6 +2154,7 @@ footer {
 
   .contacts-2.active {
     position: fixed;
+    opacity: 1;
     bottom: 155px;
     right: 30px;
     border-radius: 50%;
@@ -2151,6 +2164,7 @@ footer {
 
   .contacts-3.active {
     position: fixed;
+    opacity: 1;
     bottom: 215px;
     right: 30px;
     border-radius: 50%;
@@ -2178,6 +2192,16 @@ footer {
   }
 }
 
+@media (max-width: 670px) {
+  .galery__slider-item img {
+    padding-top: 100px;
+  }
+
+  .galery__slider-item p {
+    max-width: 90%;
+  }
+}
+
 @media (max-width: 600px) {
   .pop-up_form h2 {
     font-size: 40px;
@@ -2192,6 +2216,10 @@ footer {
 }
 
 @media (max-width: 450px) {
+  .title_info h2 {
+    max-width: 350px;
+  }
+
   .title_info h2 {
     font-size: 30px;
     line-height: 36px;
@@ -2323,6 +2351,12 @@ footer {
 @media (max-width: 375px) {
   .title_info p {
     max-width: 220px;
+  }
+}
+
+@media (max-width: 350px) {
+  .title_info h2 {
+    font-size: 28px;
   }
 }
 
