@@ -2,6 +2,8 @@ const input = document.querySelectorAll('form input');
 const submit = document.querySelectorAll('form button')[0];
 const label = document.querySelectorAll('form label');
 const popup = document.querySelectorAll('.overlay')[0];
+const computedElem = document.querySelectorAll('.page3__content-reviews')[0];
+const slider = document.querySelectorAll('.slider')[0];
 
 $(document).ready(function() {
 
@@ -121,4 +123,6 @@ document.onclick = function (e) {
 		popup.style.display = 'none';
    };
 };
-       
+const computed = getComputedStyle(computedElem)
+const elemSize = parseInt(computed.height) - parseInt(computed.marginBottom) - parseInt(computed.paddingBottom) - 40;
+slider.style.height = elemSize + 'px';       

@@ -160,8 +160,8 @@ p {
 
 .photo {
   position: absolute;
-  -o-object-fit: contain;
-  object-fit: contain;
+  -o-object-fit: cover;
+  object-fit: cover;
   top: 10%;
   right: 23%;
   height: 90%;
@@ -431,7 +431,7 @@ nav .header_anchor:hover:after {
   width: 100vw;
   height: 100vh;
   background: #222222;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .content__info {
@@ -712,6 +712,7 @@ nav .header_anchor:hover:after {
   max-height: 100%;
   padding-bottom: 20px;
   display: flex;
+  text-overflow: ellipsis;
 }
 
 .page3__content .page3__content-operation {
@@ -790,18 +791,13 @@ nav .header_anchor:hover:after {
   z-index: 100;
   position: relative;
   min-width: 0;
-  padding: 0 30px 35px 30px;
+  padding: 0 30px 55px 30px;
   flex: 0 0 33%;
-  max-height: 80vh;
+  max-height: 100%;
   background: #fff;
-  margin-bottom: 50px;
+  margin: 0 0 50px 0;
   border-radius: 24px;
   color: #000;
-}
-
-.page3__content-reviews li {
-  display: block;
-  overflow: hidden;
 }
 
 .page3__content-reviews h3 {
@@ -823,9 +819,8 @@ nav .header_anchor:hover:after {
 
 .page3__content-reviews a {
   position: absolute;
-  bottom: 0px;
-  left: 0;
-  background-color: #fff;
+  bottom: 20px;
+  left: 30px;
   font-size: 16px;
   line-height: 19px;
   display: flex;
@@ -834,7 +829,6 @@ nav .header_anchor:hover:after {
   color: #A5A5A5;
   width: 95%;
   border-radius: 24px;
-  padding: 10px 0 25px 20px;
 }
 
 /* СЛАЙДЕР2 */
@@ -842,26 +836,20 @@ nav .header_anchor:hover:after {
 .slider {
   min-width: 0;
   display: flex;
-  max-height: 80%;
+  max-height: inherit;
+  overflow: hidden;
 }
 
 .slick-list {
   overflow: hidden;
-  min-width: 100%;
 }
 
 .slider-item {
   overflow: hidden;
 }
 
-.slider-item p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .slick-track {
   display: flex;
-  max-height: 100%;
 }
 
 .slider .slick-arrow {
@@ -1325,10 +1313,6 @@ footer p {
     max-height: 100vh;
   }
 
-  .page3__content-reviews li {
-    height: 39vh;
-  }
-
   .content__contacts a:after {
     background-color: #151515;
     display: block;
@@ -1340,6 +1324,12 @@ footer p {
 
   .content__contacts a:hover:after {
     width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (min-height: 742px) {
+  .page3__content-reviews {
+    margin-bottom: 150px;
   }
 }
 
@@ -1821,7 +1811,7 @@ footer p {
     padding: 13px 10px;
     background: #151515;
     border-radius: 50%;
-    z-index: 1050;
+    z-index: 9000;
     transition: all 0.3s ease 0s;
     opacity: 0.9;
   }
@@ -2041,6 +2031,8 @@ footer p {
   }
 
   .page3__content-reviews {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
     height: auto;
     width: 100%;
     margin-top: 40px;
@@ -2048,7 +2040,7 @@ footer p {
   }
 
   .page3__content-reviews p {
-    max-height: 270px;
+    max-height: 350px;
   }
 
   .page3__content-reviews .span3 {
@@ -2318,8 +2310,12 @@ footer p {
   }
 
   .page3__content-reviews {
-    padding: 0 20px;
+    padding: 0 20px 50px 20px;
     height: 100%;
+  }
+
+  .page3__content-reviews a {
+    left: 20px;
   }
 
   .content__form {
