@@ -2,8 +2,10 @@ const input = document.querySelectorAll('form input');
 const submit = document.querySelectorAll('form button')[0];
 const label = document.querySelectorAll('form label');
 const popup = document.querySelectorAll('.overlay')[0];
-const computedElem = document.querySelectorAll('.page3__content-reviews')[0];
-const slider = document.querySelectorAll('.slider')[0];
+const overlay = document.querySelectorAll('.overlay')[0];
+const player = document.querySelector("lottie-player");
+const slider = document.querySelector(".slider");
+const sliderText = document.querySelectorAll(".slider p");
 
 $(document).ready(function() {
 
@@ -23,7 +25,7 @@ $(document).ready(function() {
      		});
       }
    $('.slider').slick({
-   	autoplay: true,
+   	//autoplay: true,
    	autoplaySpeed: 10000,
    	infinite: false,
    	
@@ -56,6 +58,7 @@ $(document).ready(function() {
 	$('.contacts-main').click(function (event) {
 		$('.contacts-1,.contacts-2,.contacts-3,.contacts-4,.contacts-main').toggleClass('active');
 	}); 
+	
 	$('#button').click(function (event) {
 		let checkForm = true;
 		if (!$('#input1').val()) {
@@ -69,26 +72,38 @@ $(document).ready(function() {
 			$('#label2').addClass('active');
 		}
 		if (($('#input2').val().length !== 16) && ($('#input2').val().length > 2)) {
-			checkForm = false;
+			checkForm = false; 
 			$('#input2').addClass('error');
 			$('#label2').addClass('active');;
 			$('#label2').text('Неверный формат');
 		}
-		if (checkForm) {
-			$('form').submit(function(event) {
-				event.preventDefault();
-					 $.ajax({
-						 type: "POST",
-						 url: "mail.php",
-						 data: $(this).serialize()
-					 }).done(function() {
-						 $('.overlay').fadeIn();
-						 $(this).find("input").val("");
-						 $("form").trigger("reset");
-						 $('body').addClass('lock');
-					 });
-					 return false;
-				 });
+		if (checkForm) {		
+			event.preventDefault();
+				$.ajax({
+					type: "POST",
+					url: "mail.php",
+					data: $("input").serialize()
+				}).fail(function () {
+					$('#animation').hide();
+					$('.overlay').fadeIn();
+					$("form").trigger("reset");
+					$('.error').fadeIn();
+					$('.pop-up_form h2').text('Что-то не так'); 
+					$('.pop-up_form h3').text('Проверьте интернет соединение или попробуйте позже');
+					$('.pop-up_form button').text('Попробую позже'); 
+				}).done(function () {
+					$('.error').hide();
+					$('.overlay').fadeIn();
+					$('#animation').fadeIn();
+					player.load("https://assets3.lottiefiles.com/packages/lf20_yvli2ph8.json");
+					$('.pop-up_form h2').text('Отлично!'); 
+					$('.pop-up_form h3').text('Мой помощник свяжется с вами в ближайшее время');
+					$('.pop-up_form button').text('Хорошо, буду ждать');
+					$(this).find("input").val("");
+					$("form").trigger("reset");
+					$('body').addClass('lock'); 
+				});
+			return false; 
 		}
 	});
 	
@@ -123,6 +138,5 @@ document.onclick = function (e) {
 		popup.style.display = 'none';
    };
 };
-const computed = getComputedStyle(computedElem)
-const elemSize = parseInt(computed.height) - parseInt(computed.marginBottom) - parseInt(computed.paddingBottom) - 40;
-slider.style.height = elemSize + 'px';       
+const lineNumber = Math.floor((slider.clientHeight - 49) / 20 - 1);
+sliderText.forEach(item => item.style.webkitLineClamp = lineNumber);

@@ -230,6 +230,7 @@ nav a:last-child {
 
 nav .header_anchor {
   color: #000;
+  font-weight: normal;
 }
 
 nav .header_anchor:after {
@@ -526,6 +527,7 @@ nav .header_anchor:hover:after {
   line-height: 14px;
   text-align: center;
   color: #000;
+  background-color: #EBEBEB;
   border: 1px solid #000000;
   border-radius: 100px;
   padding: 17px 30px;
@@ -789,6 +791,8 @@ nav .header_anchor:hover:after {
 
 .page3__content-reviews {
   z-index: 100;
+  display: flex;
+  flex-direction: column;
   position: relative;
   min-width: 0;
   padding: 0 30px 55px 30px;
@@ -798,6 +802,11 @@ nav .header_anchor:hover:after {
   margin: 0 0 50px 0;
   border-radius: 24px;
   color: #000;
+}
+
+.page3__content-reviews .slider-wrapper {
+  overflow: hidden;
+  max-height: 100%;
 }
 
 .page3__content-reviews h3 {
@@ -831,6 +840,14 @@ nav .header_anchor:hover:after {
   border-radius: 24px;
 }
 
+.page3__content-reviews p {
+  position: relative;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  line-height: 20px;
+  text-overflow: -o-ellipsis-lastline;
+}
+
 /* СЛАЙДЕР2 */
 
 .slider {
@@ -845,10 +862,12 @@ nav .header_anchor:hover:after {
 }
 
 .slider-item {
+  max-height: 100%;
   overflow: hidden;
 }
 
 .slick-track {
+  max-height: 100%;
   display: flex;
 }
 
@@ -1148,6 +1167,16 @@ footer p {
   align-items: center;
   transform: translateX(-50%) translateY(-50%);
   background: #fff;
+}
+
+.pop-up_form svg {
+  transform: scale(0.8);
+  display: none;
+  margin-bottom: -25px;
+}
+
+.pop-up_form .animation {
+  display: none;
 }
 
 .pop-up_form h2,
@@ -1521,6 +1550,12 @@ footer p {
   }
 }
 
+@media (max-width: 1160px) {
+  .black_shape svg {
+    transform: translateX(-25%);
+  }
+}
+
 @media (max-width: 1150px) {
   .white_shape svg {
     transform: translateX(30%);
@@ -1548,10 +1583,6 @@ footer p {
 }
 
 @media (max-width: 1090px) {
-  .black_shape svg {
-    transform: translateX(-20%);
-  }
-
   .photo {
     right: 14%;
   }
