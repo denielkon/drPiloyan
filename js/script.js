@@ -1,5 +1,4 @@
 const input = document.querySelectorAll('form input');
-const submit = document.querySelectorAll('form button')[0];
 const label = document.querySelectorAll('form label');
 const popup = document.querySelectorAll('.overlay')[0];
 const overlay = document.querySelectorAll('.overlay')[0];
@@ -25,7 +24,7 @@ $(document).ready(function() {
      		});
       }
    $('.slider').slick({
-   	//autoplay: true,
+   	autoplay: true,
    	autoplaySpeed: 10000,
    	infinite: false,
    	
@@ -89,8 +88,8 @@ $(document).ready(function() {
 					$("form").trigger("reset");
 					$('.error').fadeIn();
 					$('.pop-up_form h2').text('Что-то не так'); 
-					$('.pop-up_form h3').text('Проверьте интернет соединение или попробуйте позже');
-					$('.pop-up_form button').text('Попробую позже'); 
+					$('.pop-up_form h3').text('Попробуйте позже или свяжитесь с моим помощником');
+					$('.pop-up_form button').text('Хорошо'); 
 				}).done(function () {
 					$('.error').hide();
 					$('.overlay').fadeIn();
@@ -121,10 +120,7 @@ input[1].addEventListener('input', function () {
    x = x.startsWith('+7 ') ? x : '+7 ' + x;
    input[1].value = x;
 });
-submit.onclick = function (e) {
-	e.preventDefault();
-	
-}
+
 input[0].addEventListener("focus", function () {
    label[0].classList.remove('active');
    input[0].classList.remove('error');
