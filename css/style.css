@@ -297,9 +297,12 @@ nav .header_anchor:hover:after {
   padding-top: 40px;
 }
 
-.title_info p {
+.title_info h1 {
   display: inline-block;
   padding-top: 8px;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 20px;
 }
 
 .title_info span {
@@ -326,6 +329,11 @@ nav .header_anchor:hover:after {
   border-radius: 16px;
   padding: 18px 23px;
   transition: all 0.2s ease 0s;
+}
+
+.title_reg svg {
+  max-width: 50px;
+  height: 50px;
 }
 
 .title_reg a:hover {
@@ -493,6 +501,11 @@ nav .header_anchor:hover:after {
 .content__diploms .content__diploms-main {
   position: relative;
   z-index: 3;
+}
+
+.content__diploms .content__diploms-main svg {
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .content__diploms span {
@@ -1131,6 +1144,11 @@ nav .header_anchor:hover:after {
   transition: all 0.1s ease 0s;
 }
 
+.content__form svg {
+  max-width: 50px;
+  max-height: 50px;
+}
+
 footer {
   position: absolute;
   bottom: 30px;
@@ -1720,6 +1738,11 @@ footer p {
     display: block;
     margin: 0 auto;
     max-width: 350px;
+  }
+
+  .title_reg1 .reg_content svg {
+    max-width: 50px;
+    max-height: 50px;
   }
 
   .title_reg1 p {
@@ -2425,7 +2448,7 @@ footer p {
 }
 
 @media (max-width: 375px) {
-  .title_info p {
+  .title_info h1 {
     max-width: 220px;
   }
 }
