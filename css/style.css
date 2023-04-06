@@ -393,7 +393,7 @@ nav .header_anchor:hover:after {
 }
 
 .page2 span {
-  background-color: #EBEBEB;
+  background-color: #F5F4F8;
   height: 100vh;
   width: 20%;
   position: absolute;
@@ -502,7 +502,7 @@ nav .header_anchor:hover:after {
 }
 
 .content__diploms span {
-  background-color: #EBEBEB;
+  background-color: #F5F4F8;
   height: 180vh;
   width: 100%;
   position: absolute;
@@ -540,7 +540,7 @@ nav .header_anchor:hover:after {
   line-height: 14px;
   text-align: center;
   color: #000;
-  background-color: #EBEBEB;
+  background-color: #F5F4F8;
   border: 1px solid #000000;
   border-radius: 100px;
   padding: 17px 30px;
@@ -1385,7 +1385,13 @@ footer p {
   }
 }
 
-@media (min-width: 1200px) and (min-height: 760px) {
+@media (min-width: 1200px) and (min-height: 650px) {
+  .page2_content {
+    padding-top: 15vh;
+  }
+}
+
+@media (min-width: 1200px) and (min-height: 745px) {
   .page2_content {
     padding-top: 20vh;
   }
