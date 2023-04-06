@@ -1,7 +1,10 @@
 const input = document.querySelectorAll('form input');
-const submit = document.querySelectorAll('form button')[0];
 const label = document.querySelectorAll('form label');
 const popup = document.querySelectorAll('.overlay')[0];
+const overlay = document.querySelectorAll('.overlay')[0];
+const player = document.querySelector("lottie-player");
+const slider = document.querySelector(".slider");
+const sliderText = document.querySelectorAll(".slider p");
 
 $(document).ready(function() {
 
@@ -54,6 +57,7 @@ $(document).ready(function() {
 	$('.contacts-main').click(function (event) {
 		$('.contacts-1,.contacts-2,.contacts-3,.contacts-4,.contacts-main').toggleClass('active');
 	}); 
+	
 	$('#button').click(function (event) {
 		let checkForm = true;
 		if (!$('#input1').val()) {
@@ -67,26 +71,38 @@ $(document).ready(function() {
 			$('#label2').addClass('active');
 		}
 		if (($('#input2').val().length !== 16) && ($('#input2').val().length > 2)) {
-			checkForm = false;
+			checkForm = false; 
 			$('#input2').addClass('error');
 			$('#label2').addClass('active');;
 			$('#label2').text('Неверный формат');
 		}
-		if (checkForm) {
-			$('form').submit(function(event) {
-				event.preventDefault();
-					 $.ajax({
-						 type: "POST",
-						 url: "mail.php",
-						 data: $(this).serialize()
-					 }).done(function() {
-						 $('.overlay').fadeIn();
-						 $(this).find("input").val("");
-						 $("form").trigger("reset");
-						 $('body').addClass('lock');
-					 });
-					 return false;
-				 });
+		if (checkForm) {		
+			event.preventDefault();
+				$.ajax({
+					type: "POST",
+					url: "mail.php",
+					data: $("input").serialize()
+				}).fail(function () {
+					$('#animation').hide();
+					$('.overlay').fadeIn();
+					$("form").trigger("reset");
+					$('.error').fadeIn();
+					$('.pop-up_form h2').text('Что-то не так'); 
+					$('.pop-up_form h3').text('Попробуйте позже или свяжитесь с моим помощником');
+					$('.pop-up_form button').text('Хорошо'); 
+				}).done(function () {
+					$('.error').hide();
+					$('.overlay').fadeIn();
+					$('#animation').fadeIn();
+					player.load("https://assets3.lottiefiles.com/packages/lf20_yvli2ph8.json");
+					$('.pop-up_form h2').text('Отлично!'); 
+					$('.pop-up_form h3').text('Мой помощник свяжется с вами в ближайшее время');
+					$('.pop-up_form button').text('Хорошо, буду ждать');
+					$(this).find("input").val("");
+					$("form").trigger("reset");
+					$('body').addClass('lock'); 
+				});
+			return false; 
 		}
 	});
 	
@@ -104,10 +120,7 @@ input[1].addEventListener('input', function () {
    x = x.startsWith('+7 ') ? x : '+7 ' + x;
    input[1].value = x;
 });
-submit.onclick = function (e) {
-	e.preventDefault();
-	
-}
+
 input[0].addEventListener("focus", function () {
    label[0].classList.remove('active');
    input[0].classList.remove('error');
@@ -121,4 +134,5 @@ document.onclick = function (e) {
 		popup.style.display = 'none';
    };
 };
-       
+const lineNumber = Math.floor((slider.clientHeight - 49) / 20 - 1);
+sliderText.forEach(item => item.style.webkitLineClamp = lineNumber);
