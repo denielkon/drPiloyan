@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <title>Онкопластический хирург-маммолог Корниясова Евгения</title>
+   <meta name="description"
+      content="Расчёт полной стоимости пластической операции: с учётом операции, наркоза, пребывания в клинике, расходных материалов. Стоимость &quot;под ключ&quot;.">
+   <link rel="shortcut icon" href="../" type="image/png">
+   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/calcstyle.min.css">
+</head>
+
+<body>
+   <header>
+      <a class="header_anchor" href="index.html">Korniyasova</a>
+      <h1>| Калькулятор</h1>
+   </header>
+   <main>
+      <div class="form-container">
+         <div class="select_container container_operation">
+            <label>Выберите операции</label>
+            <div class="select operations">
+               <div class="selected_operations-container"></div>
+               <input class='input_operations' type="text">
+            </div>
+            <div class="operations_list"></div>
+         </div>
+         <div class="select_container container_additional">
+            <label>Выберите дополнительные расходы</label>
+            <div class="select additional">
+               <div class="selected_additional-container"></div>
+               <input class='input_additional' type="text">
+            </div>
+            <div class="additional_list"></div>
+         </div>
+         <div class="selectinput_container">
+            <div class="select_number-container">
+               <div class="select-number">
+                  <label>Продолжительность наркоза</label>
+                  <div class="input_number-container">
+                     <input class="narcosis_time" value="90" type="number" min="0" step="30">
+                     <p>мин.</p>
+                  </div>
+               </div>
+               <div class="select-number select_bottom left">
+                  <label>Первый час наркоза</label>
+                  <div class="input_number-container">
+                     <input class="narcosis_firsthour" type="number" value="18000" min="0" step="500">
+                     <p>руб.</p>
+                  </div>
+               </div>
+
+            </div>
+            <div class="select_number-container">
+               <div class="select-number">
+                  <label>Пребывание в клинике</label>
+                  <div class="input_number-container oneday">
+                     <div class="inclinictime_container">
+                        <input class="inclinic_time" type="number" value="0" min="0" step="1">
+                        <p>дн.</p>
+                     </div>
+                     <div class="oneday_checkbox">
+                        <input class="inputoneday_checkbox" type="checkbox">
+                        <label for="">Заезд за день до операции</label>
+                     </div>
+                  </div>
+               </div>
+               <div class="select-number select_bottom">
+                  <label>Последующий час наркоза</label>
+                  <div class="input_number-container">
+                     <input class="narcosis_nexthours" type="number" value="7000" min="0" step="500">
+                     <p>руб.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <textarea>Введите параметры</textarea>
+   </main>
+   <script src="js/calc.min.js"></script>
+</body>
+
+</html>
